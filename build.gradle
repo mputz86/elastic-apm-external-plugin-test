@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    flatDir {
+        dirs 'libs-without-bootstrap-fix'
+    }
+}
+
+dependencies {
+//    implementation "co.elastic.apm:apm-agent-api:1.19.0"
+//    implementation "co.elastic.apm:apm-agent-attach:1.19.0"
+    // Comment out above lines and uncomment the following two lines to use libs built without the bootstrap lookup fix,
+    // 98707982806d720666c57e60f87c54de46220e93 .
+    implementation name: "apm-agent-api-1.19.0"
+    implementation name: "apm-agent-attach-1.19.0"
+}
+
+test {
+    useJUnitPlatform()
+}

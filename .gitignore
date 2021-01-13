@@ -1,0 +1,6 @@
+.DS_Store
+.gradle
+.idea
+.tool-versions
+build
+out
